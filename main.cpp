@@ -1,14 +1,11 @@
 #include "TestTelCoColorCodeInfoProvider.h"
 
-namespace TelCoColorCoder
-{
-    int main() {
-        testNumberToPair(4, MajorColor::WHITE, MinorColor::BROWN);
-        testNumberToPair(5, MajorColor::WHITE, MinorColor::SLATE);
 
-        testPairToNumber(MajorColor::BLACK, MinorColor::ORANGE, 12);
-        testPairToNumber(MajorColor::VIOLET, MinorColor::SLATE, 25);
+int main() {
+    TelCoColorCoder::testNumberToPair(4, TelCoColorCoder::MajorColor::WHITE, TelCoColorCoder::MinorColor::BROWN);
+    TelCoColorCoder::testNumberToPair(5, TelCoColorCoder::MajorColor::WHITE, TelCoColorCoder::MinorColor::SLATE);
 
-        return 0;
-    }
+    TelCoColorCoder::testPairToNumber(TelCoColorCoder::MajorColor::BLACK, TelCoColorCoder::MinorColor::ORANGE, 12);
+    TelCoColorCoder::testPairToNumber(TelCoColorCoder::MajorColor::VIOLET, TelCoColorCoder::MinorColor::SLATE, 25);
+    return 0;
 }

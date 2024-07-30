@@ -7,5 +7,8 @@ int main() {
 
     TelCoColorCoder::testPairToNumber(TelCoColorCoder::MajorColor::BLACK, TelCoColorCoder::MinorColor::ORANGE, 12);
     TelCoColorCoder::testPairToNumber(TelCoColorCoder::MajorColor::VIOLET, TelCoColorCoder::MinorColor::SLATE, 25);
+
+    TelCoColorCoder::TraceTelCoColorCodeMap();
+
     return 0;
 }

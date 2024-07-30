@@ -14,4 +14,13 @@ namespace TelCoColorCoder
     int GetPairNumberFromColor(MajorColor major, MinorColor minor) {
         return major * numberOfMinorColors + minor + 1;
     }
+
+    void TraceTelCoColorCodeMap()
+    {
+        for(int pairNumber = 1; pairNumber <= 25; pairNumber++)
+        {
+            ColorPair colorPair = GetColorFromPairNumber(pairNumber);
+            std::cout << pairNumber << colorPair.ToString() << "\n";
+        }
+    }
 }

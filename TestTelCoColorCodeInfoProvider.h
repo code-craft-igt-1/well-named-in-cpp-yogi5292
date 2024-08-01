@@ -10,4 +10,6 @@ namespace TelCoColorCoder
         MajorColor major,
         MinorColor minor,
         int expectedPairNumber);
+
+    void testTraceTelCoColorCodeMap();
 }

@@ -1,4 +1,5 @@
 #include <assert.h>
+#include <sstream>
 #include "TelCoColorCodeInfoProvider.h"
 
 namespace TelCoColorCoder
@@ -14,13 +15,24 @@ namespace TelCoColorCoder
         assert(colorPair.getMinor() == expectedMinor);
     }
 
-    void testPairToNumber(
-        MajorColor major,
+    void testPairToNumber(MajorColor major,
         MinorColor minor,
         int expectedPairNumber)
     {
         int pairNumber = TelCoColorCoder::GetPairNumberFromColor(major, minor);
         std::cout << "Got pair number " << pairNumber << std::endl;
         assert(pairNumber == expectedPairNumber);
+    }
+
+    void testTraceTelCoColorCodeMap()
+    {
+        std::string telCoColorCodeInfo = GetTelCoColorCodeMap();
+
+        for(int pairNumber = 1; pairNumber <= 25; pairNumber++)
+        {
+            std::stringstream temp;
+            temp << pairNumber << " " << GetColorFromPairNumber(pairNumber).ToString();
+            assert(telCoColorCodeInfo.find(temp.str()) != std::string::npos);
+        }
     }
 }

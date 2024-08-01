@@ -1,3 +1,4 @@
+#include <sstream>
 #include "TelCoColorCodeInfoProvider.h"
 
 namespace TelCoColorCoder
@@ -15,12 +16,13 @@ namespace TelCoColorCoder
         return major * numberOfMinorColors + minor + 1;
     }
 
-    void TraceTelCoColorCodeMap()
+    std::string GetTelCoColorCodeMap()
     {
+        std::stringstream ColorCodePairInfo;
         for(int pairNumber = 1; pairNumber <= 25; pairNumber++)
         {
-            ColorPair colorPair = GetColorFromPairNumber(pairNumber);
-            std::cout << pairNumber << colorPair.ToString() << "\n";
+            ColorCodePairInfo << pairNumber << " " << GetColorFromPairNumber(pairNumber).ToString() << "\n";
         }
+        return ColorCodePairInfo.str();
     }
 }

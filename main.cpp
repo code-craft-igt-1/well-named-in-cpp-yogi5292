@@ -1,5 +1,5 @@
+#include <sstream>
 #include "TestTelCoColorCodeInfoProvider.h"
-
 
 int main() {
     TelCoColorCoder::testNumberToPair(4, TelCoColorCoder::MajorColor::WHITE, TelCoColorCoder::MinorColor::BROWN);
@@ -8,7 +8,8 @@ int main() {
     TelCoColorCoder::testPairToNumber(TelCoColorCoder::MajorColor::BLACK, TelCoColorCoder::MinorColor::ORANGE, 12);
     TelCoColorCoder::testPairToNumber(TelCoColorCoder::MajorColor::VIOLET, TelCoColorCoder::MinorColor::SLATE, 25);
 
-    TelCoColorCoder::TraceTelCoColorCodeMap();
+    TelCoColorCoder::testTraceTelCoColorCodeMap();
 
+    std::cout << TelCoColorCoder::GetTelCoColorCodeMap();
     return 0;
 }
